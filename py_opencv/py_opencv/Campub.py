@@ -58,13 +58,12 @@ class ImagePublisher(Node):
                 self.high = 130
                 self.colcode = 4
                 self.col = "blue"
-            elif self.flap ==4:
+            else:
                 self.low = 0
                 self.high = 10
                 self.colcode = 1
                 self.col = "Orange"
-            else:
-                self.flap = 1
+                self.flap = 0
 
             frame = cv.resize(frame,(1000,1000),interpolation=cv.INTER_AREA)
             msg = self.bridge.cv2_to_imgmsg(frame, encoding="bgr8")
